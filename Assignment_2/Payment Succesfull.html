@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <style>
+        /* Basic Reset */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+            background-color: #fff;
+        }
+
+        .header__left {
+            display: flex;
+            align-items: center;
+        }
+
+        .header__logo {
+            margin-right: 10px;
+        }
+
+        .tabs {
+            display: flex;
+            background-color: #fff;
+        }
+
+        .tab {
+            padding: 10px 15px;
+            border: none;
+            background-color: #fff;
+            cursor: pointer;
+        }
+
+        .tab.active {
+            background-color: #ffeb3b; /* Yellow highlight */
+        }
+
+        .section {
+            background-color: #f0f0f0;
+            padding: 15px;
+            margin: 10px;
+        }
+
+        .section__title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .address__details {
+            margin-bottom: 10px;
+        }
+
+        .delivery__details {
+            background-color: #e0e0e0;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .shipment__details {
+            background-color: #e0e0e0;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .global__delivery {
+            margin-bottom: 10px;
+        }
+
+        .totals {
+            margin-top: 20px;
+        }
+
+        .total__row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+
+        .voucher__input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .payment__button {
+            width: 100%;
+            padding: 12px;
+            background-color: #ffc107;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* Popup Styles */
+        .popup {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+            justify-content: center;
+            align-items: center;
+            z-index: 1000; /* Ensure it's on top */
+        }
+
+        .popup__content {
+            background-color: rgba(255, 235, 59, 0.7); /* Yellowish transparent background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 300px;
+        }
+
+        .popup h1 {
+            font-size: 24px;
+            color: #4CAF50; /* Green color for text */
+            background-color: #000; /* Black background */
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .popup p {
+            font-size: 16px;
+            color: #333;
+            margin: 5px 0;
+        }
+
+        .popup .green-line {
+            color: #4CAF50; /* Green color for the entire line */
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .popup .terms {
+            font-size: 12px;
+            color: #777;
+            margin-top: 20px;
+        }
+
+        /* Show popup when active */
+        .popup.active {
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__left">
+            <span>15:42</span>
+            <img src="your-logo.png" alt="Logo" class="header__logo" width="30">
+        </div>
+        <span>Secure Checkout</span>
+    </header>
+
+    <div class="tabs">
+        <button class="tab active">Delivery</button>
+        <button class="tab">Payment</button>
+        <button class="tab">Summary</button>
+    </div>
+
+    <section class="section">
+        <h2 class="section__title">Your Address</h2>
+        <div class="address__details">
+            <p>Carl Jones</p>
+            <p>Street name</p>
+            <p>State - Region</p>
+            <p>Mobile number</p>
+            <p>Home line</p>
+            <a href="#">Change Address</a>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="delivery__details">
+            <p><strong>Door Delivery</strong></p>
+            <p>Delivered between Wednesday 8 June and Thursday 16 June for $50</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section__title">Shipment Details</h2>
+        <div class="shipment__details">
+            <p>Shipment 1 of 1</p>
+            <p>1 Qty Bikes against wall painting by Timon Klauser</p>
+            <p>Delivered between Wednesday 8 June and Thursday 16 June</p>
+        </div>
+        <div class="global__delivery">
+            <img src="global-delivery-icon.png" alt="Global Delivery" width="30"> Global Delivery
+        </div>
+    </section>
+
+    <section class="section totals">
+        <div class="total__row">
+            <span>Items Total</span>
+            <span>$320</span>
+        </div>
+        <div class="total__row">
+            <span>Shipping Fees</span>
+            <span>$50</span>
+        </div>
+        <div class="total__row">
+            <span>Int'l Shipping Fees</span>
+            <span>$10</span>
+        </div>
+        <hr>
+        <div class="total__row">
+            <span><strong>TOTAL</strong></span>
+            <span><strong>$380</strong></span>
+        </div>
+    </section>
+
+    <section class="section">
+        <input type="text" placeholder="Enter Voucher code (if Available)" class="voucher__input">
+        <button class="payment__button" onclick="showPopup()">Make Payment</button>
+    </section>
+
+    <!-- Payment Successful Popup -->
+    <div class="popup" id="paymentPopup">
+        <div class="popup__content">
+            <h1>PAYMENT SUCCESSFUL!</h1>
+            <p class="green-line">Product will arrive Within 10 working days. Let us know how much you love it!</p>
+            <p>RETURN AND REFUND PROCESS</p>
+            <p>EXPRESS DAYS AFTER ARRIVAL.</p>
+            <p class="terms">Terms and Conditions apply</p>
+        </div>
+    </div>
+
+    <script>
+        function showPopup() {
+            document.getElementById('paymentPopup').classList.add('active');
+        }
+    </script>
+</body>
+
+</html>
