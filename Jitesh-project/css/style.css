@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Kalnia+Glaze:wght@100..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Teko:wght@300..700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Kalnia+Glaze:wght@100..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Teko:wght@300..700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Kalnia+Glaze:wght@100..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Teko:wght@300..700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+/* base rule  */
+
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    /* 1rem = 10px  */
+    /* scroll-snap-type: Y proximity; */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Poppins", sans-serif;
+}
+
+
+p,
+li,
+a,
+label {
+  font-family: "Urbanist", sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
+  font-weight: 400;
+  color: var(--para-color);
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+/* states  */
+
+.btn:hover {
+    background-color: var(--bnt-hover-bg-color);
+    cursor: pointer;
+    box-shadow: var(--btn-box-shadow);
+  }
+
+/* theme */
+:root {
+    --main-color: #0062ff;
+    --supporting-color: #ebf3fe;
+    --font-color: #424242;
+    /* --bg-color: #ffffff; */
+    --bg-color: #f7fcff;
+    --heading-color: #000a19;
+    --hero-heading-color: #003b99;
+    --white-color: #ffffff;
+    --para-color: #504e4d;
+    --bnt-hover-bg-color: #003b99;
+    --btn-box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    --footer-bg-color: #040d12;
+  }
+
+
+  /* layout */
+
+.container {
+    max-width: 100rem;
+    margin: 0 auto;
+    padding: 4rem 2rem 2.4rem;
+  }
+
+  .grid-four--cols {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+
+
+  /***** Start navbar Section *****/
+
+.section-navbar {
+    width: 100%;
+    box-shadow: 0px 8px 10px 0px rgba(230, 230, 230, 1);
+  }
+  
+  
+  .section-navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem 3rem;
+  }
+  
+  .section-navbar .navbar ul {
+    display: flex;
+    gap: 2rem;
+  
+    & li a {
+      color: var(--heading-color);
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 1.2rem;
+      display: inline-block;
+      position: relative;
+  
+  
+  
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -0.3rem;
+        left: 0;
+        width: 0%;
+        border-bottom: 0.2rem solid var(--main-color);
+        transition: all 0.3s linear;
+        -webkit-transition: all 0.3s linear;
+        -moz-transition: all 0.3s linear;
+        -ms-transition: all 0.3s linear;
+        -o-transition: all 0.3s linear;
+  
+  
+      }
+    }
+  
+    & li a:hover:after {
+      width: 100%;
+    }
+  
+    & li a:hover {
+      color: var(--main-color);
+    }
+  }
+
+.navbar-brand .fa-solid {
+    font-size: 2rem;
+}
+  
+  .navbar-brand img {
+    width: 10%;
+    height: auto;
+  }
+  
+  /***** End navbar Section *****/
+
+
+  /* slider */
+.main {
+    background-color: black ;
+}
+
+.main .container {
+    text-align: center;
+    padding: 4rem 0rem 2.4rem;
+}
+
+.main     .slider {
+    width: 60%;
+    max-width: 800px;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    margin: 0 auto;
+   
+  }
+
+  .main .slides {
+    display: flex;
+    width: 100%;
+    animation: slide 10s infinite;
+    -webkit-animation: slide 10s infinite;
+}
+  
+.main .slides img {
+    width: 100%;
+   height: auto;
+}
+
+@keyframes slide {
+    0%   { margin-left: 0%; }
+    20%  { margin-left: 0%; }
+    25%  { margin-left: -100%; }
+    45%  { margin-left: -100%; }
+    50%  { margin-left: -200%; }
+    70%  { margin-left: -200%; }
+    75%  { margin-left: -300%; }
+    95%  { margin-left: -300%; }
+    100% { margin-left: -400%; }
+  }
+
+  .main .main-hero{
+
+      margin-bottom: 5rem;
+  }
+  .main .main-hero h1 {
+        font-family: "Bungee Spice", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 4rem;
+        
+  }
+  .main .main-hero h2 {
+        font-family: "Bungee Spice", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 3rem;
+        
+  }
+
+
+
+  /* start section blog */
+
+  .section-blog .container{
+    display: grid;
+    padding: 4rem 0rem 3rem;
+  }
+  .section-blog {
+    background-color: var(--bg-color);
+    /* margin: 4rem 0 3rem; */
+  
+    & .grid {
+      gap: 3rem;
+    }
+  
+    & .blog {
+      /*border: 1px solid black;*/
+      width: 20rem;
+      box-shadow: var(--btn-box-shadow);
+      transition: scale 0.3s linear;
+      -webkit-transition: scale 0.3s linear;
+      -moz-transition: scale 0.3s linear;
+      -ms-transition: scale 0.3s linear;
+      -o-transition: scale 0.3s linear;
+
+      &:hover {
+
+          scale: 1.1;
+      }
+    
+    }
+  
+    & .blog-content {
+      padding: 1.4rem 2.4rem 2.4rem;
+    }
+  
+    & img {
+      width: 100%;
+      height: auto;
+    }
+  
+    & .blog-date {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1.6rem;
+    }
+  
+    & .section-common--title {
+      margin-top: 0.8rem;
+    }
+  }
+  
+  .grid-four--cols {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .blog-content .section-common--title a {
+    font-weight: 900;
+  }
+  /* end section blog */
+
+
+/* footer */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .footer h3 {
+    margin-bottom: 15px;
+  }
+  
+  .footer p {
+    margin: 5px 0;
+    font-size: 14px;
+  }
+  
+  .footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  
+  .footer a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer-bottom {
+    margin-top: 20px;
+    font-size: 13px;
+    color: #ccc;
+  }
+/* footer */
+
