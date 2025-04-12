@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Reset */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            /* Colors (Extracted from image) */
+            --bg-color: #000000;
+            --text-color: #ffffff;
+            --icon-color: #d4af37; /* Gold */
+
+            /* Typography */
+            --font-family: "Poppins", sans-serif;
+
+            /* Spacing */
+            --spacing-md: 12px;
+            --spacing-lg: 20px;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.5;
+        }
+
+        .sidebar {
+            width: 250px; /* Adjust width as needed */
+            height: 100vh;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            padding: var(--spacing-lg);
+        }
+
+        .sidebar__close {
+            font-size: 24px;
+            cursor: pointer;
+            margin-bottom: var(--spacing-lg);
+            
+        }
+
+        .sidebar__item {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--spacing-lg);
+            cursor: pointer;
+        }
+
+        .sidebar__icon {
+            font-size: 20px;
+            margin-right: var(--spacing-md);
+            color: var(--icon-color);
+        }
+
+        .sidebar__text {
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <aside class="sidebar">
+        <div class="sidebar__close"><a href="index.html" style="color: white; text-decoration: none;">X</a></div>
+        <div class="sidebar__item">
+            <span class="sidebar__icon">&#9776;</span>
+            <span class="sidebar__text"><a href="index.html" style="color: white; text-decoration: none">home</a></span>
+        </div>
+        <div class="sidebar__item">
+            <span class="sidebar__icon">&#9937;</span>
+            <span class="sidebar__text"><a href="auction.html" style="color: white; text-decoration: none;">Auctions</a></span>
+        </div>
+        <div class="sidebar__item">
+            <span class="sidebar__icon">&#9776;</span>
+            <span class="sidebar__text"><a href="order.html" style="color: white; text-decoration: none;">Orders</a></span>
+        </div>
+        <div class="sidebar__item">
+            <span class="sidebar__icon">&#128722;</span>
+            <span class="sidebar__text"><a href="Payment Page.html" style="color: white; text-decoration: none;">Buy now</a></span>
+        </div>
+        <div class="sidebar__item">
+            <span class="sidebar__icon">&#128161;</span>
+            <span class="sidebar__text">Sell</span>
+        </div>
+        <div class="sidebar__item">
+            <span class="sidebar__icon">&#8631;</span>
+            <span class="sidebar__text"><a href="index.html" style="color: white; text-decoration: none;">Log out</a></span>
+        </div>
+        <div class="sidebar__item">
+            <span class="sidebar__icon">&#9881;</span>
+            <span class="sidebar__text"><a href="contact.html" style="color: white; text-decoration: none;">Contact</a></span>
+        </div>
+        <div class="sidebar__item">
+            <span class="sidebar__icon">&#128273;</span>
+            <span class="sidebar__text"><a href="privacy.html" style="color: white; text-decoration: none;">Privacy Policy</a></span>
+        </div>
+        <div class="sidebar__item">
+            <span class="sidebar__icon">&#9884;</span>
+            <span class="sidebar__text"><a href="about.html" style="color: white; text-decoration: none;">About</a></span>
+        </div>
+    </aside>
+</body>
+
+</html>
